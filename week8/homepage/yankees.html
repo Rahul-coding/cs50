@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+
+    <body>
+
+        <h1>The Yankees</h1>
+        <div class="button-container">
+            <button onclick="location.href='aboutme.html'">About Me</button>
+            <button onclick="location.href='yankees.html'">Yankees</button>
+            <button onclick="location.href='hobbies.html'">Hobbies</button>
+            <button class="btn btn-primary" onclick="location.href='index.html'">Home</button>
+        </div>
+        <p>
+            The Yankees are a MLB baseball team for New York. They have a history of success, with 27 World Series wins.
+            They're rivals are the Red Sox <br> due to a factor of reasons one of which is the Red Sox trading trade Babe Ruth to
+            the Yankees, leading the infamous "Curse of the Bambino".
+        </p>
+
+        <h3> Try to guess my favorite current Yankees player </h3>
+        <div class="button-container">
+            <input type = "button" value = "Aaron Judge" onClick = "checkAnswer(this)"/>
+            <input type = "button" value = "Luke Weaver" onClick = "checkAnswer(this)"/>
+            <input type = "button" value = "Ben Rice" onClick = "checkAnswer(this)"/>
+        </div>
+        <p id = "feedback">
+        <script>
+        const feedback = document.getElementById("feedback")
+        const buttons = document.querySelectorAll('input[type="button"]')
+
+        function checkAnswer(button){
+            if(button.value == "Ben Rice"){
+                feedback.textContent = "Correct!"
+                button.style.backgroundColor = "lightgreen"
+                button.style.border = "5px solid green"
+            }
+            else{
+                feedback.textContent = "Inorrect!"
+                button.style.backgroundColor = "salmon"
+                button.style.border = "5px solid red"
+            }
+        }
+        </script>
+    </body>
+
+</html>
